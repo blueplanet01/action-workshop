@@ -19,5 +19,5 @@ jobs:
           who-to-greet: '@DeepSeek'
 
       - name: Output time set in the container
-        run: echo "The time was ${{ steps.hello-action.outputs.time }} by ${{ steps.hello-action.outputs.user }} when the action said hello"
+        run: echo "The time was ${{ steps.hello-action.outputs.time }} by ${{ steps.hello-action.outputs.who }} when the action said hello"
         # run: echo "The time was ${{ steps.hello-action.outputs.time }} when the action said hello"
