@@ -8,8 +8,8 @@ inputs:
 outputs:
   time:
     description: 'The time we said hello.'
-  user:
-    desciption: 'who to greet'
+  # user:
+  #   desciption: 'who to greet'
 runs:
   using: 'docker'
   image: 'Dockerfile'
