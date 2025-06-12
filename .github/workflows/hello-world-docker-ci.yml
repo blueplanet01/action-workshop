@@ -2,7 +2,7 @@ name: CI Build for Docker Action
 on:
   push:
     branches: [ demo1 ]
-    paths: [ first-action/** ]
+    paths: [ hello-world-docker-ci/** ]
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
 
       - name: Run hello docker container action
         id: hello-action1
-        uses: ./first-action
+        uses: ./hello-world-docker-ci
         with:
           who-to-greet: '@DeepSeek'
 
