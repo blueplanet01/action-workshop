@@ -1,0 +1,11 @@
+name: test first action demo
+on: [workflow_dispatch]
+
+jobs:
+  test-my-own-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: call my hello docker action
+        uses: blueplnet01/hello-world-docker-action@v1.0.0
+        with:
+          who-to-greet: '@dophin'
