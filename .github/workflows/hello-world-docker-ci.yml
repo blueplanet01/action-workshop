@@ -1,7 +1,7 @@
 name: CI Build for Docker Action
 on:
   push:
-    branches: [ main ]
+    branches: [ demo1 ]
     paths: [ hello-world-docker-action/** ]
   workflow_dispatch:
 
@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4.2.2
 
-      - name: Run my own container action
-        id: hello-action1
+      - name: Run hello docker container action
+        id: hello-docker
         uses: ./hello-world-docker-action
         with:
           who-to-greet: '@DeepSeek'
 
       - name: Output time set in the container
-        run: echo "The time was ${{ steps.hello-action1.outputs.time }} by ${{ steps.hello-action1.outputs.who }} when the action said hello"
-        # run: echo "The time was ${{ steps.hello-action.outputs.time }} when the action said hello"
+        # run: echo "The time was ${{ steps.hello-action1.outputs.time }} by ${{ steps.hello-action1.outputs.who }} when the action said hello"
+        run: echo "The time was ${{ steps.hello-docker.outputs.time }} when the action said hello"
