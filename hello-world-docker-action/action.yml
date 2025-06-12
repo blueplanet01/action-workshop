@@ -9,7 +9,7 @@ outputs:
   time:
     description: 'The time we said hello.'
   who:
-    desciption: 'who to greet'
+    description: 'who to greet'
 runs:
   using: 'docker'
   image: 'Dockerfile'
