@@ -14,7 +14,7 @@ on:
       steps:
         - run: |
           echo "The job was triggered by event: ${{ github.event_name }}
-          echo "The name of your branch is ${{ gighub.ref }} and your repo is ."
+          echo "The name of your branch is ${{ github.ref }} and your repo is ."
         
         - use: actions/checkout@v3.3.0
 
