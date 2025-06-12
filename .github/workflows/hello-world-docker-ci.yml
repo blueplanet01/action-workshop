@@ -13,11 +13,11 @@ jobs:
         uses: actions/checkout@v4.2.2
 
       - name: Run hello docker container action
-        id: hello-action1
+        id: hello-docker
         uses: ./hello-world-docker-action
         with:
           who-to-greet: '@DeepSeek'
 
       - name: Output time set in the container
         # run: echo "The time was ${{ steps.hello-action1.outputs.time }} by ${{ steps.hello-action1.outputs.who }} when the action said hello"
-        run: echo "The time was ${{ steps.hello-action.outputs.time }} when the action said hello"
+        run: echo "The time was ${{ steps.hello-docker.outputs.time }} when the action said hello"
