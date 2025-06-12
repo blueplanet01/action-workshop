@@ -25,4 +25,12 @@ jobs:
           echo "The repo ${{ github.repository }} contains the following files:"
           tree
 
-            
+  ListFile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.3.0
+
+      - name: List files in the repo
+        run: |
+          echo "The repo ${{ github.repository }} contains the following files:"
+          tree              
