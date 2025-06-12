@@ -18,17 +18,11 @@ jobs:
           echo "The job was triggered by event: ${{ github.event_name }}"
           echo "The name of your branch is ${{ github.ref }} and your repo is ."
       
-      - uses: actions/checkout@v3.3.0
-
-      - name: List files in the repo
-        run: |
-          echo "The repo ${{ github.repository }} contains the following files:"
-          tree
-
   ListFile:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.3.0
+      - name: Check out source file
+        uses: actions/checkout@v3.3.0
 
       - name: List files in the repo
         run: |
