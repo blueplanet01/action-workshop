@@ -1,7 +1,7 @@
 name: gha-demo1
 
 on:
-  push: 
+  push:
     branches: [ main ]
     paths-ignore: [ .github/** ]
   pull_request:
