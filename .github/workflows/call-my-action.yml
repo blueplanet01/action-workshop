@@ -1,4 +1,4 @@
-name: test first action demo
+name: call my own action
 on: 
   push:
     branches: [ main ]
@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: call my hello docker action
-        uses: blueplnet01/hello-world-docker-action@v1.0.0
+        uses: blueplanet01/hello-world-docker-action@v1.0.0
         with:
           who-to-greet: '@dophin'
