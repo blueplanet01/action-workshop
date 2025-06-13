@@ -18,6 +18,7 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
+    environment: DEV
     steps:
       - run: |
           echo "The job was triggered by event: ${{ github.event_name }}"
@@ -27,6 +28,38 @@ jobs:
           echo "repo level variable: ${{ vars.REPO_LEVEL_VAR1_NAME }}"
           env
           
+  Test:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    environment: Test
+    needs: Build
+    steps:
+      - run: |
+          echo "🧪 Testing..."
+          sleep 15
+
+  Prod:
+    runs-on: ubuntu-latest
+    environment: Production
+    needs: [Build, Test]
+    if: github.event.inputs.environment == 'Production'
+    steps:
+      - run: |
+          echo "🚀 Step 1..."
+          sleep 10
+      - run: |
+          echo "🚀 Step 2..."
+          sleep 10
+      - run: |
+          echo "🚀 Step 3..."
+          sleep 10
+      - run: |
+          echo "🚀 Step 4..."
+          sleep 10
+      - run: |
+          echo "🚀 Step 5..."
+          sleep 10    
+
       
   ListFile:
     runs-on: ubuntu-latest
