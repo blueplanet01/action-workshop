@@ -19,6 +19,7 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     environment: DEV
+    needs: ListFile
     steps:
       - run: |
           echo "The job was triggered by event: ${{ github.event_name }}"
@@ -31,8 +32,8 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
+    needs: ListFile
     environment: Test
-    needs: Build
     steps:
       - run: |
           echo "🧪 Testing..."
