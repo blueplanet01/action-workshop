@@ -22,7 +22,7 @@ jobs:
       - run: |
           echo "The job was triggered by event: ${{ github.event_name }}"
           echo "The name of your branch is ${{ github.ref }} and your repo is ."
-          echo "Display NEV_NAME from Environment: ${{ vars.ENV_NAME }} "
+          echo "Display NEV_NAME from Environment: ${{ vars.ENV_NAME_DEV }} "
           echo "job name: ${{ vars.JOB_NAME }}"
           echo "repo level variable: ${{ vars.REPO_LEVEL_VAR1_NAME }}"
           env
