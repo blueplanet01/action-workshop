@@ -24,7 +24,7 @@ jobs:
       - run: |
           echo "The job was triggered by event: ${{ github.event_name }}"
           echo "The name of your branch is ${{ github.ref }} and your repo is ."
-          echo "Display NEV_NAME from Environment: ${{ vars.ENV_NAME_DEV }} "
+          echo "🧪 Display NEV_NAME from Environment: ${{ vars.ENV_NAME }} "
           echo "job name: ${{ vars.JOB_NAME }}"
           echo "repo level variable: ${{ vars.REPO_LEVEL_VAR1_NAME }}"
           env
@@ -36,6 +36,8 @@ jobs:
     environment: Test
     steps:
       - run: |
+          echo "🧪 Display NEV_NAME from Environment: ${{ vars.ENV_NAME }} "      
+      - run: |
           echo "🧪 Testing..."
           sleep 15
 
@@ -45,6 +47,8 @@ jobs:
     needs: [Build, Test]
     if: github.event.inputs.environment == 'Production'
     steps:
+      - run: |
+          echo "🧪 Display NEV_NAME from Environment: ${{ vars.ENV_NAME }} "    
       - run: |
           echo "🚀 Step 1..."
           sleep 10
