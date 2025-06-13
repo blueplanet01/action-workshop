@@ -23,6 +23,8 @@ jobs:
           echo "The job was triggered by event: ${{ github.event_name }}"
           echo "The name of your branch is ${{ github.ref }} and your repo is ."
           echo "Display NEV_NAME from Environment: ${{ vars.ENV_NAME }} "
+          echo "job name: ${{ vars.JOB_NAME }}
+          
       
   ListFile:
     runs-on: ubuntu-latest
